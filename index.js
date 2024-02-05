@@ -29,22 +29,29 @@ const gamesContainer = document.getElementById("games-container");
 function addGamesToPage(games) {
 
     // loop over each item in the data
-
-
+    var gameID = 0
+    for (let game of games){
+        
         // create a new div element, which will become the game card
-
+        let gameCardDiv = document.createElement("div")
 
         // add the class game-card to the list
+        gameCardDiv.className = "game-card"
 
-
-        // set the inner HTML using a template literal to display some info 
-        // about each game
+        // set the inner HTML using a template literal to display some info about each game
         // TIP: if your images are not displaying, make sure there is space
         // between the end of the src attribute and the end of the tag ("/>")
+        gameCardDiv.innerHTML = `
+        <img class="game-img" src=${game.img} />
+        <h3>${games[i].name}</h3>
+        <p>${games[i].description}</p>
+        <p>Backers: ${games[i].backers}</p>'`
 
+    
 
         // append the game to the games-container
-
+        gamesContainer.append(gameCardDiv)
+    }
 }
 
 // call the function we just defined using the correct variable
@@ -56,6 +63,8 @@ function addGamesToPage(games) {
  * total number of contributions, amount donated, and number of games on the site.
  * Skills used: arrow functions, reduce, template literals
 */
+
+    var totalgames = GAMES_JSON
 
 // grab the contributions card element
 const contributionsCard = document.getElementById("num-contributions");
