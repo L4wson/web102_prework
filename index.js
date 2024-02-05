@@ -50,7 +50,7 @@ function addGamesToPage(games) {
             <p> Backers: ${game.backers} </p>
             
         `;
-        gameElement.innerHTML = display
+        gameCardDiv.innerHTML = display
 
         // append the game to the games-container
         gamesContainer.appendChild(gameCardDiv)
